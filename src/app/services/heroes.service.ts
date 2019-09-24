@@ -76,6 +76,21 @@ export class HeroesService {
         return this.heroes[id];
     }
 
+    public buscarHeroes(termino: string ):Heroe[] {
+        let heroesArray: Heroe[] = [];
+
+        termino = termino.toUpperCase();
+
+        for (const heroe of this.heroes) {
+            let nombre = heroe.nombre.toUpperCase();
+            if ( nombre.indexOf( termino ) >=0 ){
+                heroesArray.push(heroe);
+
+            }
+        }
+        return heroesArray;
+    }
+
 
 
 }

@@ -18,6 +18,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { SingleHeroeComponent } from './components/single-heroe/single-heroe.component';
+import { BuscarHeroesComponent } from './components/buscar-heroes/buscar-heroes.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SingleHeroeComponent } from './components/single-heroe/single-heroe.com
     NavbarComponent,
     AboutComponent,
     HeroesComponent,
-    SingleHeroeComponent
+    SingleHeroeComponent,
+    BuscarHeroesComponent
   ],
   imports: [
     BrowserModule,
