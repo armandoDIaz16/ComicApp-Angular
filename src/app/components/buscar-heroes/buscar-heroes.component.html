@@ -1,20 +1,32 @@
-<h1>Resultados de: <small>"{{parametroBusqueda}}"</small></h1>
+<h1>Buscando : <small class="text-">"{{parametroBusqueda}}"</small></h1>
 <hr>
-<div class="card-columns">
 
-    <h1 *ngIf="heroesArray==null">SIN RESULTADOS</h1>
+<!-- <h1 class="mt-5 text-muted" >SIN RESULTADOS</h1> -->
+<br><br>
+<div class="row animated fadeIn" *ngIf="heroesArray.length<=0">
 
+    <div class="col-md-12">
+        <div class="alert alert-primary" role="alert">
+            No se encontraron resultados de: <span class="font-weight-bold">"{{parametroBusqueda}}"</span>
+        </div>
+    </div>
+</div>
+
+<!-- *ngFor="let heroe of heroesArray; let i = index" -->
+<app-heroe-tarjeta [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroesArray"></app-heroe-tarjeta>
+
+<!-- <div class="card-columns">
     <div class="card animated fadeIn fast" *ngFor="let heroe of heroesArray; let i = index">
         <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
         <div class="card-body">
             <h4 class="card-title">{{ heroe.nombre }}</h4>
             <p class="card-text text-justify">{{ heroe.bio }}</p>
             <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
-            <!-- <button type="button" (click)="verHeroe(i)" class="btn btn-outline-primary btn-block">
+            <button type="button" (click)="verHeroe(i)" class="btn btn-outline-primary btn-block">
                 Ver m&aacute;s...
-            </button> -->
-            <!-- <a [routerLink]="[ '/singleHeroe',i ]" class="btn btn-outline-primary btn-block"> Ver m&aacute;s</a> -->
+            </button>
+            <a [routerLink]="[ '/singleHeroe',i ]" class="btn btn-outline-primary btn-block"> Ver m&aacute;s</a>
 
         </div>
     </div>
-</div>
+</div> -->

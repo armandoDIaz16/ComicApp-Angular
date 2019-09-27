@@ -28,6 +28,8 @@ export class SingleHeroeComponent implements OnInit {
   ngOnInit() {
   }
 
-
+ back() {
+    window.history.back();
+}
 
 }

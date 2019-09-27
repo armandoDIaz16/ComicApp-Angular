@@ -13,10 +13,11 @@
         <hr>
         <p class="text-justify lead">{{heroe.bio}}</p>
         <div class="my-0">
-            <a class="btn btn-outline-danger float-right" [routerLink]="[ '/heroes']">
+            <!-- <a class="btn btn-outline-danger float-right" [routerLink]="[ '/heroes']"> -->
+            <button class="btn btn-outline-danger float-right" (click)="back()">
                 <!-- <i class="fas fa-chevron-circle-left"></i> Back</a> -->
                 <fa-icon [icon]="iconFlecha"></fa-icon> Back
-            </a>
+            </button>
             <img *ngIf="heroe.casa=='DC'" class="img-logo" src="assets/img/DC.png" [alt]="heroe.casa">
             <img *ngIf="heroe.casa=='Marvel'" class="img-logo" src="assets/img/Marvel.png" [alt]="heroe.casa">
         </div>

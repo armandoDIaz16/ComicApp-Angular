@@ -76,14 +76,19 @@ export class HeroesService {
         return this.heroes[id];
     }
 
-    public buscarHeroes(termino: string ):Heroe[] {
+    public buscarHeroes(termino: string ): Heroe[] {
         let heroesArray: Heroe[] = [];
 
         termino = termino.toUpperCase();
 
-        for (const heroe of this.heroes) {
+        for (let index = 0; index < this.heroes.length; index++) {
+            let heroe = this.heroes[index];
+
+        // }
+        // for (const heroe of this.heroes) {
             let nombre = heroe.nombre.toUpperCase();
-            if ( nombre.indexOf( termino ) >=0 ){
+            if ( nombre.indexOf( termino ) >= 0 ) {
+                heroe.idx = index;
                 heroesArray.push(heroe);
 
             }
@@ -102,4 +107,5 @@ export interface Heroe {
     aparicion: string;
     img: string;
     casa: string;
+    idx?: number;
 }
