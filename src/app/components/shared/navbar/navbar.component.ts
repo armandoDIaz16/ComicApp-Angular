@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
 
   iconSearch = faSearch;
    arrayHeroes: Heroe[];
+   text: string;
 
   constructor(private _heroesService: HeroesService,
               private _router: Router ) { }

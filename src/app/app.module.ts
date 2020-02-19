@@ -1,9 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// Importaciones para validar y trabajar formularios
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // ROUTES
 import { APP_ROUTING } from './app.routes';
-
+//Ng prime 
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {InputSwitchModule} from 'primeng/inputswitch';
+import {AutoCompleteModule} from 'primeng/autocomplete';
 
 // SERVICIOS
 import { HeroesService } from './services/heroes.service';
@@ -34,8 +39,13 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     APP_ROUTING,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    InputSwitchModule,
+    AutoCompleteModule
   ],
   providers: [
     HeroesService

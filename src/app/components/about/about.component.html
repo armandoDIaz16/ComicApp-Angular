@@ -3,3 +3,26 @@
     <hr>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat qui quisquam reprehenderit animi, accusamus delectus corporis perspiciatis itaque id. Animi, modi nam sit fuga enim officia sequi corporis repellendus vel?</p>
 </div>
+
+
+<p>aqui {{this.estado}}</p>
+<p-inputSwitch [(ngModel)]="this.estado" name="estado" ></p-inputSwitch>
+<hr>
+<p-autoComplete [(ngModel)]="this.heroesArray"
+[multiple]="true"
+ [suggestions]="this.heroes" 
+ field="casa"
+ (completeMethod)="buscarHeroes($event)"
+ >
+ <ng-template let-value pTemplate="selectedItem">
+    <span style="padding-left: 20px; font-size:11px">{{value.nombre}}{{value.casa}}</span>
+</ng-template>
+<ng-template let-brand pTemplate="item">
+    <div class="ui-helper-clearfix">
+        <div style="font-size:18px;float:right;margin:10px 10px 0 0">{{brand.nombre}}</div>
+    </div>
+</ng-template>
+</p-autoComplete>
+
+ <pre> {{this.heroe | json }}
+</pre>
